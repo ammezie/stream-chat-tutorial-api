@@ -23,7 +23,7 @@ app.post('/join', async (req, res) => {
   // generate Stream Chat token to use to authenticate user on the client
   const token = serverSideClient.createToken(username)
 
-  return res.status(200).send({ user: { username }, token })
+  return res.status(200).json({ user: { username }, token })
 })
 
 app.listen(port, () => {
